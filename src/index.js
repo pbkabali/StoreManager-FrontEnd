@@ -1,10 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./app";
 
-const app = (
-    <>
-        Welcome to Store Manager 2
-    </>
-)
-
-ReactDOM.render(app, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

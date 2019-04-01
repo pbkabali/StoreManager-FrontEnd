@@ -6,7 +6,10 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --collectCoverage",
+    "coverage": "jest --collectCoverage"
   },
   "repository": {
     "type": "git",
