@@ -9,7 +9,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --collectCoverage",
-    "coverage": "jest --collectCoverage"
+    "coverage": "jest --collectCoverage",
+    "heroku-prebuild": "npx rimraf package-lock.json npm-shrinkwrap.json node_modules && npm install yarn && yarn install",
+    "heroku-postbuild": "yarn run build"
   },
   "repository": {
     "type": "git",
