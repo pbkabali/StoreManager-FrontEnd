@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import HomePage from "./Containers/homePage";
+import Products from "./Containers/products";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" exact component={HomePage} />
+            <Route path="/products" exact component={Products} />
           </Switch>
         </Router>
         <Footer />
