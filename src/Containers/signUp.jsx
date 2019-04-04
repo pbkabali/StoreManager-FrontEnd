@@ -141,6 +141,7 @@ export class SignUp extends Component {
                 </Button>
                 <br />
                 <br />
+                <Link to="/">Back to sign in</Link>
               </Segment>
             </GridColumn>
             <GridColumn width={5} />
