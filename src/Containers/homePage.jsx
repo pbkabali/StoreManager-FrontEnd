@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import {
   Grid,
   Button,
@@ -13,13 +13,17 @@ import { loginAction } from "../redux/actions/loginAction";
 
 export class HomePage extends Component {
   state = {
-    username: "user1",
-    password: "user123"
+    username: "",
+    password: "",
+    buttonDisabled: true
   };
 
   onInputChange = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      buttonDisabled: !(
+        this.state.username.length >= 3 && this.state.password.length >= 6
+      )
     });
   };
 
@@ -30,9 +34,6 @@ export class HomePage extends Component {
       password
     };
     this.props.loginAction(payload);
-    this.setState({
-      redirect: true
-    });
   };
 
   renderRedirect = () => {
@@ -86,12 +87,16 @@ export class HomePage extends Component {
                 <br />
                 <br />
                 <Button
+                  disabled={this.state.buttonDisabled}
                   size="large"
                   onClick={this.loginUser}
                   loading={this.props.loading}
                 >
                   Login
                 </Button>
+                <br />
+                <br />
+                <Link to="/signup">Signup for a new account</Link>
               </Segment>
             </GridColumn>
             <GridColumn width={5} />

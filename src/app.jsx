@@ -4,6 +4,7 @@ import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import HomePage from "./Containers/homePage";
 import Products from "./Containers/products";
+import SignUp from "./Containers/signUp";
 
 class App extends Component {
   render() {
@@ -13,7 +14,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/products" exact component={Products} />
+            <Route path="/products" component={Products} />
+            <Route path="/signup" component={SignUp} />
           </Switch>
         </Router>
         <Footer />
