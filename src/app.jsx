@@ -1,24 +1,23 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NavBar from "./components/navBar";
-import Footer from "./components/footer";
 import HomePage from "./Containers/homePage";
 import Products from "./Containers/products";
 import SignUp from "./Containers/signUp";
+import Layout from "./Containers/layout";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <Router>
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/products" component={Products} />
-            <Route path="/signup" component={SignUp} />
+            <Route path="/signup" exact component={SignUp} />
+            <Layout>
+              <Route path="/products" exact component={Products} />
+            </Layout>
           </Switch>
         </Router>
-        <Footer />
       </div>
     );
   }
